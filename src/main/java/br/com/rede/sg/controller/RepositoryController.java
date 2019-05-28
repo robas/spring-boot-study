@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.rede.sg.resource.Service;
-import br.com.rede.sg.service.ServiceService;
+import br.com.rede.sg.resource.Repository;
+import br.com.rede.sg.service.RepositoryService;
 
 @RestController
-public class ServiceController {
+public class RepositoryController {
 	@Autowired
-	private ServiceService serviceService;
+	private RepositoryService repositoryService;
 
 	@GetMapping("/welcome")
 	public String welcome() {
@@ -23,18 +23,18 @@ public class ServiceController {
 	}
 	
 	@GetMapping("/services")
-	public List<Service> getServices() {
-		return serviceService.getServices();
+	public List<Repository> getServices() {
+		return repositoryService.getRepositories();
 	}
 	
 	@GetMapping("/services/{name}")
-	public List<Service> getService(@PathVariable String name ) {
-		return serviceService.getServicesByName(name);
+	public List<Repository> getService(@PathVariable String name ) {
+		return repositoryService.getRepositoriesByName(name);
 	}
 	
 	@PostMapping("/services")
-	public Service addService(@RequestBody Service service) {
-		return serviceService.addService(service);
+	public Repository addService(@RequestBody Repository service) {
+		return repositoryService.addRepository(service);
 	}
 	
 }

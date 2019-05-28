@@ -2,28 +2,28 @@ package br.com.rede.sg.resource;
 
 import java.util.List;
 
-public class Service {
+public class Repository {
 	private long id;
-	private String name;
-	private String repo;
+	private String serviceName;
+	private String url;
 	private String desc;
-	private List<String> deps;
+	private List<Route> deps;
 	
 
-	public Service(long id, String name, String repo, String desc, List<String> deps) {
+	public Repository(long id, String name, String repo, String desc, List<Route> deps) {
 		super();
 		this.id = id;
-		this.name = name;
-		this.repo = repo;
+		this.serviceName = name;
+		this.url = repo;
 		this.desc = desc;
 		this.deps = deps;
 	}
 
-	public List<String> getDeps() {
+	public List<Route> getDeps() {
 		return deps;
 	}
 
-	public void setDeps(List<String> deps) {
+	public void setDeps(List<Route> deps) {
 		this.deps = deps;
 	}
 
@@ -36,19 +36,19 @@ public class Service {
 	}
 
 	public String getName() {
-		return name;
+		return serviceName;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.serviceName = name;
 	}
 
 	public String getRepo() {
-		return repo;
+		return url;
 	}
 
 	public void setRepo(String repo) {
-		this.repo = repo;
+		this.url = repo;
 	}
 
 	public String getDesc() {
